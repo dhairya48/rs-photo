@@ -1,26 +1,107 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.only-outline {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.red-color {
+  color: #984B53;
 }
 
-* {
-  box-sizing: border-box;
+.image {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.what-we-do-img {
+  width: 75%;
+}
+
+.mytextdiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mytexttitle {
+  flex-grow: 0;
+  padding-right: 3%;
+}
+
+.divider {
+  flex-grow: 0.1;
+  height: 1px;
+  background-color: #3D4044;
+}
+
+.divider2 {
+  flex-grow: 0.2;
+  height: 1px;
+  background-color: #3D4044;
+}
+
+.mytexttitle2 {
+  flex-grow: 0;
+  padding-right: 6%;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(Sevillana-Regular.ttf);
+}
+
+#font-style-2 {
+  font-family: myFirstFont;
+  font-size: 20px;
+}
+
+.img-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.top-left {
+  position: absolute;
+  top: 64px;
+  left: 128px;
+}
+
+.divider3 {
+  flex-grow: 0.08;
+  height: 1px;
+  background-color: #FFF;
+  margin-right: 2%;
+}
+
+.mytexttitle4 {
+  flex-grow: 0;
+  padding-right: 12%;
+}
+
+.divider4 {
+  flex-grow: 0.2;
+  height: 1px;
+  background-color: #3D4044;
+}
+
+.circle-image {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+}
+
+.circle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.light-red-color {
+  color: #E0453D;
+}
+
+.form-input::placeholder {
+  color: #ABABAB;
 }

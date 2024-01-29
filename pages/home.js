@@ -1,7 +1,10 @@
 import Header from "../components/headers";
+import Landing from "../components/landing"
+import Services from "../components/services"
+import Portfolio from "../components/portfolio";
+import Testimonial from "../components/testimonials";
+import Contactus from "../components/contactus";
 import Footer from "../components/footer";
-import IndividualIntervalsExample from "../components/carousel";
-// import '../public/images/1.jpg'
 import React, { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -15,17 +18,20 @@ export default function Home() {
   }, []);
   return (
     <>
+      <head>
+        <title>Sevenvows</title>
+      </head>
       <Header pageName={'Home'} />
-      {isLoading ? (
-        <div id="preloader">
-          <div class="line"></div>
-        </div>
-      ) :
-        <div style={{ "background-color": "black" }}>
-          <IndividualIntervalsExample />
-          <Footer />
-        </div>
-      }
+      <Landing />
+      <Services />
+      <Portfolio />
+      <Testimonial />
+      <Contactus />
+      <Footer />
+
+
     </>
   );
 }
+
+

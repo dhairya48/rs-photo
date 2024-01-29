@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nivo/bar": "^0.84.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.2",
     "glightbox": "^3.2.0",
