@@ -1,5 +1,32 @@
+import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 
 function Contactus() {
+  const [mailJson, setMailJson] = useState({ 'email': '', 'name': '', 'message': '' })
+
+
+  async function submit() {
+    var data = mailJson;
+
+    var config = {
+      method: 'post',
+      url: 'http://localhost:3000/api/sendMail',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+
+  }
   return (
     <>
       <div style={{ backgroundColor: "#000" }}>
@@ -80,20 +107,20 @@ function Contactus() {
                   <form class="row g-3">
                     <div class="col-md-6">
                       <input type="text" class="form-control text-bg-dark form-input" style={{ color: "#ABABAB" }}
-                        placeholder="Name" id="inputname" />
+                        placeholder="Name" id="inputname" onChange={(e) => { setMailJson({ ...mailJson, 'name': e.target.value }) }} />
                     </div>
                     <div class="col-md-6">
                       <input type="email" class="form-control text-bg-dark form-input" style={{ color: "#ABABAB" }}
-                        placeholder="Email" id="inputemail" />
+                        placeholder="Email" id="inputemail" onChange={(e) => { setMailJson({ ...mailJson, 'email': e.target.value }) }} />
                     </div>
                     <div class="col-12">
                       <textarea class="form-control bg-dark dsa" style={{ color: "#ABABAB" }} id="exampleFormControlTextarea1"
-                        rows="3">Message here...</textarea>
+                        rows="3" onChange={(e) => { setMailJson({ ...mailJson, 'message': e.target.value }) }} placeholder='Message here...'></textarea>
                     </div>
 
                     <div class="col-12" style={{ textAlign: "start" }}>
-                      <button type="submit" style={{ backgroundColor: "#e44c4b" }} class="btn text-white">Send Your
-                        Message</button>
+                      <div style={{ backgroundColor: "#e44c4b" }} class="btn text-white" onClick={submit}>Send Your
+                        Message</div>
                     </div>
                   </form>
                 </div>

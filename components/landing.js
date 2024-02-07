@@ -3,10 +3,10 @@ function Landing() {
   return (
     <>
       <div class="img-container">
-        <img src="./images/maxresdefault.jpg" width="100%" class="img-fluid" alt="image" />
+        <img src="./images/1.JPG" width="100%" class="img-fluid" alt="image" />
         <div class="top-left">
           <h1 style={{ "fontSize": "6rem", "fontWeight": "bold", "textAlign": "left" }}>MEMORIES <br />IN A <span
-            class="only-outline">SNAP.</span></h1>
+            class="only-outline1" style={{ "color": "white" }}>SNAP.</span></h1>
           <p style={{ "text-align": "left" }}>"Photography is a way of felling, of touching of loving. what you have caught on film
             is captured <br /> forever...it remembers little things.long after you have forgotton everything"</p>
           <div class="mytextdiv">

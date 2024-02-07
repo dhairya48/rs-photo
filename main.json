@@ -1,0 +1,29 @@
+{
+    "services": [
+        {
+            "image": "ayo-ogunseinde-UqT55tGBqzI-unsplash.jpg",
+            "name": "Pre-Wedding Photography",
+            "description": "In a world where we are constantly bombarded with images"
+        },
+        {
+            "image": "weddingdoodle.png",
+            "name": "Wedding Photography",
+            "description": "In a world where we are constantly bombarded with images"
+        },
+        {
+            "image": "aiony-haust-K0DxxljcRv0-unsplash.jpg",
+            "name": "Baby Shower Photography",
+            "description": "In a world where we are constantly bombarded with images"
+        },
+        {
+            "image": "freestocks-8hAsLeE6Fbo-unsplash.jpg",
+            "name": "Brand Photography",
+            "description": "In a world where we are constantly bombarded with images"
+        },
+        {
+            "image": "seven.png",
+            "name": "Cinemateography",
+            "description": "In a world where we are constantly bombarded with images"
+        }
+    ]
+}
