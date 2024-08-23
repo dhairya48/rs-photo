@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/w3.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles/assets/vendor/bootstrap/css/bootstrap.min.css'
 import '../styles/assets/vendor/bootstrap-icons/bootstrap-icons.css'

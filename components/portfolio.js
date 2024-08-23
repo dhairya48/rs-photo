@@ -1,91 +1,151 @@
+import { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Portfolio() {
+  const images = [
+    "one.png",
+    "two.png",
+    "three.png",
+    "four.png",
+    "five.png",
+    "six.png",
+    "seven.png",
+    "eight.png",
+  ];
+
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [imageDimensions, setImageDimensions] = useState({ width: 'auto', height: 'auto' });
+
+  const handleImageClick = (index) => {
+    const image = new Image();
+    image.src = `../images/${images[index]}`;
+    image.onload = () => {
+      const maxWidth = window.innerWidth * 0.9;
+      const maxHeight = window.innerHeight * 0.9;
+
+      const ratio = Math.min(maxWidth / image.width, maxHeight / image.height);
+
+      setImageDimensions({
+        width: image.width * ratio,
+        height: image.height * ratio,
+      });
+      setSelectedIndex(index);
+    };
+  };
+
+  const handleCloseModal = () => {
+    setSelectedIndex(null);
+  };
+
+  const handleNext = () => {
+    const newIndex = selectedIndex === images.length - 1 ? 0 : selectedIndex + 1;
+    handleImageClick(newIndex);
+  };
+
+  const handlePrevious = () => {
+    const newIndex = selectedIndex === 0 ? images.length - 1 : selectedIndex - 1;
+    handleImageClick(newIndex);
+  };
+
   return (
     <>
-      <div class="text-bg-dark pt-5">
-        <div class="mt-5">
-          <div class="container">
-
-            <div class="mytextdiv">
-              <div class="mytexttitle red-color">
-                OUR PORTFOLIO
-              </div>
-              <div class="divider"></div>
+      <div className="text-bg-dark pt-5">
+        <div className="mt-5">
+          <div className="container">
+            <div className="mytextdiv">
+              <div className="mytexttitle red-color">OUR PORTFOLIO</div>
+              <div className="divider"></div>
             </div>
-            <h1 class="mt-2">LATEST <span class="only-outline">WORK</span></h1>
-            <div class="mt-5">
-              <span style={{ marginRight: "4%" }} class="red-color">ALL WORK</span>
-              <span style={{ marginRight: "4%" }}>FASHION PHOTOGRPHY</span>
-              <span style={{ marginRight: "4%" }}>LANDSCAPE PHOTOGRPHY</span>
-              <span style={{ marginRight: "4%" }}>PORTRAIT PHOTOGRPHY</span>
+            <h1 className="mt-2">
+              LATEST <span className="only-outline">WORK</span>
+            </h1>
+            <div className="mt-5">
+              <span style={{ marginRight: "4%" }} className="red-color">
+                ALL WORK
+              </span>
+              <span style={{ marginRight: "4%" }}>FASHION PHOTOGRAPHY</span>
+              <span style={{ marginRight: "4%" }}>LANDSCAPE PHOTOGRAPHY</span>
+              <span style={{ marginRight: "4%" }}>PORTRAIT PHOTOGRAPHY</span>
             </div>
           </div>
-          <div class="row mt-5">
-            <div class="col-lg-3">
-              <img src="../images/one.png" alt="" />
-            </div>
-            <div class="col-lg-3">
-              <img src="../images/two.png" alt="" />
-            </div>
-            <div class="col-lg-3">
-              <img src="../images/three.png" alt="" />
-            </div>
-            <div class="col-lg-3">
-              <img src="../images/four.png" alt="" />
-            </div>
-            <div class="col-lg-3">
-              <img src="../images/five.png" alt="" />
-            </div>
-            <div class="col-lg-3">
-              <img src="../images/six.png" alt="" />
-            </div>
-            <div class="col-lg-3">
-              <img src="../images/seven.png" alt="" />
-            </div>
-            <div class="col-lg-3">
-              <img src="../images/eight.png" alt="" />
+
+          <div className="container mt-5">
+            <div className="row">
+              {images.map((image, index) => (
+                <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={index}>
+                  <img
+                    src={`../images/${image}`}
+                    className="img-fluid rounded"
+                    alt={`Portfolio ${index + 1}`}
+                    onClick={() => handleImageClick(index)}
+                    style={{ cursor: "pointer" }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
-
-        {/* <div class="img-container pt-5">
-        <img src="../images/maxresdefault.jpg" width="100%" class="img-fluid" alt="image">
-
-          <div class="top-left">
-            <div class="mytextdiv" style="padding-left: 7%;">
-              <div class="mytexttitle4 red-color">
-                TESTIMONIAL
-              </div>
-              <div class="divider4"></div>
-            </div>
-
-            <div class="row pt-4" style="padding-left: 7%;">
-              <h1 style="font-size: 3rem; font-weight: bold;text-align: left;">CLIENT <span
-                class="only-outline">REVIEW</span></h1>
-              <div class=" col-lg-1 d-flex justify-content-end">
-                <i class="bi bi-quote " style="font-size: 3rem;color: #e44c4b;"></i>
-              </div>
-              <div class="col-lg-11">
-                <p style="text-align: left;">"Photography is a way of felling, of touching of loving. what you have caught
-                  on film is captured <br> forever...it remembers little things.long after you have forgotton everything"
-                </p>
-              </div>
-            </div>
-
-            <div class="row pt-2" style="padding-left: 10%;">
-              <div class="col-lg-1 d-flex justify-content-end align-items-center">
-                <img src="../images/jan-oliver-dahl-kalari-testimonial-round-300.png" width="50" alt="">
-              </div>
-              <div class="col-lg-11 text-start">
-                <span class="red-color">Jacob Jones</span>
-                <br>
-                  <span>Marketing Cordinator</span>
-              </div>
-            </div>
-
-          </div>
-      </div> */}
       </div>
+
+      {selectedIndex !== null && (
+        <>
+          <div
+            className="modal fade show"
+            style={{ display: "block", backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+            onClick={handleCloseModal}
+          >
+            <div
+              className="modal-dialog modal-dialog-centered"
+              style={{ maxWidth: "unset" }}
+            >
+              <div
+                className="modal-content"
+                style={{
+                  backgroundColor: "transparent",
+                  border: "none",
+                  padding: 0,
+                  textAlign: "center",
+                }}
+              >
+                <img
+                  src={`../images/${images[selectedIndex]}`}
+                  alt={`Selected ${selectedIndex + 1}`}
+                  style={{
+                    width: imageDimensions.width,
+                    height: imageDimensions.height,
+                    maxWidth: "100%", // Ensure image doesn't exceed viewport width
+                    maxHeight: "90vh", // Ensure image doesn't exceed viewport height
+                    objectFit: "contain", // Keep aspect ratio intact
+                  }}
+                />
+                <button
+                  className="btn btn-dark position-absolute start-0 top-50"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handlePrevious();
+                  }}
+                >
+                  &#8592;
+                </button>
+                <button
+                  className="btn btn-dark position-absolute end-0 top-50"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleNext();
+                  }}
+                >
+                  &#8594;
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="modal-backdrop fade show"
+            onClick={handleCloseModal}
+          ></div>
+        </>
+      )}
     </>
   );
 }

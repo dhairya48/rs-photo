@@ -1,53 +1,50 @@
-
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 function AboutUs(props) {
-
-  // const service = services?.services
   const [loading, setLoading] = useState(true);
 
-
   return (
-    <div class="text-bg-dark pt-5">
-
-      <div class="row pb-5">
-        <div class="col-6 d-flex justify-content-end px-5">
-          <img src="../images/left-image.jpg" class="rounded img-fluid" alt="" />
-        </div>
-        <div class="col-6">
-          <div class="mytextdiv">
-            <div class="mytexttitle2 red-color">
-              PHOTOGRPHY INFO
-            </div>
-            <div class="divider2">
-            </div>
+    <div className="text-bg-dark pt-5">
+      <div className="container">
+        <div className="row pb-5 align-items-center">
+          <div className="col-lg-6 col-md-12 d-flex justify-content-center mb-4 mb-lg-0">
+            <img
+              src="../images/left-image.jpg"
+              className="rounded img-fluid"
+              alt="About Us"
+            />
           </div>
-
-          <h1 class="mb-4">ABOUT <span class="only-outline">DETAILS</span></h1>
-          <p style={{ "line-height": "8px", "color": "#7E7C7D" }}>Photography is a powerful art form that</p>
-          <p style={{ "line-height": "8px", "color": "#7E7C7D" }}>allows us to capture and preserve</p>
-          <p style={{ "line-height": "8px", "color": "#7E7C7D" }}>moments in time. Whether it"s a</p>
-          <p style={{ "line-height": "8px", "color": "#7E7C7D" }}>stunning landscape.a candid portrait.or</p>
-          <p style={{ "line-height": "8px", "color": "#7E7C7D" }}>a dramatic action shot.a well-crafted</p>
-          <p style={{ "line-height": "8px", "color": "#7E7C7D" }}>photography has the ability to convey</p>
-          <p style={{ "line-height": "8px", "color": "#7E7C7D" }}>emotion, tell a story, and evoke a sense</p>
-          <p style={{ "line-height": "8px", "color": "#7E7C7D" }}>of wonder and awe in the viewer.</p>
-          <hr width="50%" class="mt-5" />
-
-          <div class="row">
-            <div class="col-5">
-              {/* <i class="bi bi-play-circle-fill fs-4 " style={{ "color": "#E74D44" }}></i> */}
+          <div className="col-lg-6 col-md-12">
+            <div className="mytextdiv">
+              <div className="mytexttitle2 red-color">PHOTOGRAPHY INFO</div>
+              <div className="divider2"></div>
             </div>
-            <div class="col-7" id="font-style-2">
-              sevenvows
+            <h1 className="mb-4">
+              ABOUT <span className="only-outline">DETAILS</span>
+            </h1>
+            <p className="text-muted">Photography is a powerful art form that</p>
+            <p className="text-muted">allows us to capture and preserve</p>
+            <p className="text-muted">
+              moments in time. Whether it&apos;s a
+            </p>
+            <p className="text-muted">stunning landscape, a candid portrait, or</p>
+            <p className="text-muted">a dramatic action shot, well-crafted</p>
+            <p className="text-muted">photography has the ability to convey</p>
+            <p className="text-muted">emotion, tell a story, and evoke a sense</p>
+            <p className="text-muted">of wonder and awe in the viewer.</p>
+            <hr className="mt-5 w-50" />
+            <div className="row">
+              <div className="col-5">
+                {/* Uncomment if you have the icon */}
+                {/* <i className="bi bi-play-circle-fill fs-4" style={{ color: "#E74D44" }}></i> */}
+              </div>
+              <div className="col-7" id="font-style-2">
+                sevenvows
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row pb-2">
-      </div>
-
-
     </div>
   );
 }

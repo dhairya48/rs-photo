@@ -1,3 +1,6 @@
+body{
+  background-color: #212529;
+}
 .only-outline1 {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px;
@@ -109,4 +112,69 @@
 
 .form-input::placeholder {
   color: #ABABAB;
+}
+.logo {
+  width: 50%;
+}
+.sidebar{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+}
+
+.big-text{
+  font-size: 6rem; 
+  font-weight: bold;
+  text-align: left;
+}
+.top-left-contact{
+  position: absolute;
+  top: 64px;
+  left: 128px;
+}
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 768px) {
+    .logo {
+      width: 200%;
+  }
+  .top-left {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+  }
+  .big-text{
+    font-size: 1.5rem; 
+    font-weight: bold;
+    text-align: left;
+  }
+  .small-text{
+    font-size: 0.5rem; 
+    text-align: left;
+  }
+  .mytexttitle3{
+    font-size: 0.8rem !important;
+  }
+  .nav-link{
+    color: #E0453D;
+  }
+  .top-left-contact{
+    position: absolute;
+    top: 0px !important;
+    left: 0px;
+  }
+  .contact-us-small-left{
+    text-align: left !important;
+  }
+  .small-screen{
+    margin-top: 50%;
+  }
+  .circle-image {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin-bottom: -20px;
+  }
 }
