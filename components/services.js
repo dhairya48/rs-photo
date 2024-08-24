@@ -56,7 +56,7 @@ function Services(props) {
                 <div className="border border-white rounded p-3" style={{ width: '100%' }}>
                   <div className="image-container mb-2" style={{ position: 'relative' }}>
                     <Image
-                      src={`http://sevenvows.in/images/${items.image}`}
+                      src={`/images/${items.image}`}
                       alt={items.name}
                       width={300}  // Provide a default width
                       height={500} // Provide a default height
